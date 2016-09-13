@@ -1,13 +1,17 @@
----
 title: Swift 2 模块化 - Observer Pattern （观察者模式） 实例
 permalink: swift-2-mo-kuai-hua-observer-pattern-shi-li
 id: 32
 updated: '2015-08-21 21:55:20'
-date: 2015-08-18 15:50:51
 tags:
+  - Swift
+  - Protocol
+categories:
+  - Programming
+date: 2015-08-18 05:50:00
 ---
-
 由于我目前开发的软件还没有升级到Swift 2，所以一直没有机会研究一下Swift 2。最近看了WWDC 2015的视频[Introducing GameplayKit](https://developer.apple.com/videos/wwdc/2015/?id=608)受到了一些启发。
+
+<!--- more --->
 
 无论是在Objective C还是在Swift里面，尽管我们可以让子类Conform多个协议，但是只能最多继承自一个父类。也就是说下面这种代码是无效的：
 

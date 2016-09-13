@@ -1,9 +1,10 @@
----
 title: '[weak self] & [unowned self]'
 permalink: weak-self-unowned-self
 id: 30
 updated: '2015-02-20 16:42:03'
-tags:
+tags: []
+categories: []
+date: 2016-03-15 06:22:00
 ---
 
 ##### Reference cycle for the classes

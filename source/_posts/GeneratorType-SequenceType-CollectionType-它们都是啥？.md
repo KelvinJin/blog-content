@@ -1,39 +1,29 @@
----
 title: 'GeneratorType, SequenceType, CollectionType 它们都是啥？'
 permalink: generatortype-sequencetype
 id: 39
 updated: '2016-02-26 23:23:52'
-date: 2016-02-26 22:04:09
 tags:
+  - swift
+categories:
+  - Programming
+date: 2016-02-26 00:04:00
 ---
+今天给大家介绍几种我们常见的Swift协议。平时用的时候我们并没有太关注它们的细节，但是了解多一点肯定会对以后使用有所帮助。
 
+<!-- more -->
 
-```swift
-//: Playground - noun: a place where people can play
-
-import AppKit
-
-
-```
-
- 今天给大家介绍几种我们常见的Swift协议。平时用的时候我们并没有太关注它们的细节，
- 但是了解多一点肯定会对以后使用有所帮助。
-
-####GeneratorType
+#### GeneratorType
  
  这三种协议里面最基础的就是`GeneratorType`了。看看它的定义就知道为什么这么说：
 
-```swift
-
-
+{% codeblock protocol.swift lang:swift %}
 public protocol GeneratorType {
     associatedtype Element
     @warn_unused_result
     public mutating func next() -> Self.Element?
 }
+{% endcodeblock %}
 
-
-```
 
  `GeneratorType`的定义非常简单，一个相关类型`associatedType`代表我们要“生成”的元素类型，
  一个方法用来返回下一个元素。你可能会很好奇，为什么它只有`next`函数，而没有`last`函数呢？
@@ -52,12 +42,11 @@ struct MyGenerator: GeneratorType {
     }
 }
 
-
 ```
 
 那你可能会问了，仅仅实现一个`Generator`好像并没有什么卵用啊。确实是这样。这就是为啥我们要来看看`SquenceType`.
 
-####SquenceType
+#### SquenceType
  
 如果你说这玩意有个毛用啊？那你就too young了，你平时用的`for...in`全靠它。换句话说，如果你写`for x in A`，那么`A`一定要实`SequenceType`这个`protocol`。所以如果我们能想个办法把上面的`MyGenerator`变成一个实现了`SequenceType`的类型，那它就可以用的上了。看看下面的例子：
 
@@ -84,7 +73,7 @@ anyGenerator(MyGenerator()).contains(1000)
 
 ```
 
-####CollectionType
+#### CollectionType
 
  好了，既然`SequenceType`如此牛逼，为啥还要`CollectionType`呢？
  这就要回到我们刚才说到的一个问题，`Generator`并不要求在遍历元素后保留它，

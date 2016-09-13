@@ -1,13 +1,16 @@
----
 title: Another UITableView Problem - actually UITapGesture
 permalink: another-uitableview-proble
 id: 25
 updated: '2015-03-20 10:11:41'
-date: 2015-03-20 09:55:25
 tags:
+  - Swift
+categories:
+  - Programming
+date: 2015-03-19 22:55:00
 ---
-
 I've been working with UITableView for a long time...
+
+<!--- more --->
 
 So, here is the background:
 
